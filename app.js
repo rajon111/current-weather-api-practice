@@ -8,3 +8,10 @@ const searchTemperature = () => {
         .then(res => res.json())
         .then(data => displayTemperature(data));
 }
+const setInnerText = (id, text) =>{
+    document.getElementById(id).innerText = text;
+}
+
+const displayTemperature = temp =>{
+    console.log(temp)
+}
