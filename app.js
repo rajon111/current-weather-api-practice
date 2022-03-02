@@ -13,8 +13,13 @@ const setInnerText = (id, text) =>{
 }
 
 const displayTemperature = temp =>{
-    console.log(temp)
+    // console.log(temp)
     setInnerText('city', `${temp.name?temp.name:'not found'}`);
-    setInnerText('temperature', temp.main.temp);
+    // setInnerText('city',temp.name)
+    setInnerText('temperature', `${temp.main.temp?temp.main.temp:''}`);
     setInnerText('condition', temp.weather[0].main);
+    //set icon
+    const url =`https://openweathermap.org/img/wn/${temp.weather[0].icon}@2x.png`
+    const iconImg = document.getElementById('weather-icon')
+    iconImg.setAttribute('src',url)
 }
